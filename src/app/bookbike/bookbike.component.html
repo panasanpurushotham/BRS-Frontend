@@ -1,0 +1,100 @@
+
+        <style>
+            .mystyle{
+                background-color:white;
+            }
+            .navbar-nav,.navbar-brand{
+               font-weight:900;
+            }
+        </style>
+    
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container px-5">
+                    <a class="navbar-brand" routerLink="/allproducts" routerLinkActive="active">BigBoyToys</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                           
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        
+
+<form #insert="ngForm" (ngSubmit)="insertData1(insert)" #booking="ngForm" (ngSubmit)="bikeBooked(booking)" class="form1"  style="border:1px solid #ccc">
+    <div class="container1">
+        <h1>Book your Bike</h1>
+        <hr>
+        <label for="brand"><b>Bike Brand</b></label>
+        <input type="text" placeholder="Enter Brand Name" id="brand" name="brand" [(ngModel)]="product.brand" required><br>
+        <!-- <div class="form-group">
+            <span class="form-label"><b>Bike Brand</b></span>
+            <select class="form-control"  name="brand" ngModel="">
+            <option>Royal Enfield</option>
+            <option>Bajaj</option>
+            <option>Hero</option>
+            <option>Yamaha</option>
+            <option>Tvs</option>
+            </select>
+            <span class="select-arrow"></span>
+            </div>
+        <br> -->
+
+        <label for="model"><b>Bike Model</b></label>
+        <input type="text" placeholder="Enter Bike Model" id="model" name="model" [(ngModel)]="product.model" required><br>
+        <!-- <div class="form-group">
+            <span class="form-label"><b>Model</b></span>
+            <select class="form-control"  name="model" ngModel="">
+            <option>Hunter 350</option>
+            <option>Fz 150</option>
+            <option>Classic 350</option>
+            <option>Pulsar 150</option>
+            <option>N160</option>
+            <option>Apache 200</option>
+            <option>Xpulse 200</option>
+            </select>
+            <span class="select-arrow"></span>
+            </div>
+        <br> -->
+
+        <label for="fname"><b>Name</b></label>
+        <input type="text" placeholder="Enter Your Name" id="fname" name="fname"  ngModel="{{profile.name}}" required><br>
+
+        <label for="contact"><b>Contact No</b></label><br>
+        <input type="number" placeholder="Enter Contact No" id="contact" name="contact" ngModel="{{profile.mob}}" required><br>
+
+        <label for="date"><b>Date</b></label><br>
+        <input type="datetime-local" placeholder="Enter Date" id="date" name="date" ngModel="date" required><br>
+
+
+        
+
+        <div class="clearfix">
+            <!-- <button type="button" class="cancelbtn">Cancel</button> -->
+            <button  type="submit" class="submitbtn">Submit</button>
+        </div>
+    </div>
+</form>
+<footer class="mystyle py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0 text-black">Copyright &copy; Your Website 2022</div></div>
+            <div class="col-auto">
+                <a class="link-dark small" href="#!">Privacy</a>
+                <span class="text-black mx-1">&middot;</span>
+                <a class="link-dark small" href="#!">Terms</a>
+                <span class="text-black mx-1">&middot;</span>
+                <a class="link-dark small" href="#!">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap core JS--> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+ <!-- Core theme JS  -->
+<script src="js/scripts.js"></script>
+
+

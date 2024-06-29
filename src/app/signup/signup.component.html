@@ -1,0 +1,142 @@
+<style>
+    .mystyle {
+        background-color: white;
+    }
+
+    .navbar-nav,
+    .navbar-brand {
+        font-weight: 900;
+    }
+</style>
+
+<body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-5">
+                <a class="navbar-brand" routerLink="" routerLinkActive="active">BigBoyToys</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </main>
+
+    <div class="container justify-content-center col-8">
+        <form [formGroup]="userForm" (ngSubmit)="createUser()" style="border:1px solid #ccc">
+
+            <h1>Sign Up</h1>
+            <p>Please fill in this form to create an account.</p>
+            <hr>
+
+            <!--Employee Name control-->
+            <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" formControlName="name" />
+                <div *ngIf="
+                    userForm.controls['name'].dirty ||
+                    userForm.controls['name'].touched
+                  ">
+                    <div class="alert alert-danger" *ngIf="userForm.controls['name'].errors?.['required']">
+                        User name is required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="userForm.controls['name'].errors?.['pattern']">
+                        User name is invalid. Only alphabets are allowed
+                    </div>
+                </div>
+            </div>
+
+            <!--Employee Mobile control-->
+            <div class="mb-3">
+                <label class="form-label">Mobile</label>
+                <input type="number" class="form-control" formControlName="mob" />
+                <div *ngIf="
+        userForm.controls['mob'].dirty ||
+        userForm.controls['mob'].touched
+      ">
+                    <div class="alert alert-danger" *ngIf="userForm.controls['mob'].errors?.['required']">
+                        User mobile is required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="userForm.controls['mob'].errors?.['pattern']">
+                        User mobile is invalid.
+                    </div>
+                </div>
+            </div>
+
+            <!--Employee birth control-->
+            <div class="mb-3">
+                <label class="form-label">Birth Date</label>
+                <input type="date" class="form-control" formControlName="birth" />
+                <div *ngIf="
+                    userForm.controls['birth'].dirty ||
+                    userForm.controls['birth'].touched
+                  ">
+                    <div class="alert alert-danger" *ngIf="userForm.controls['birth'].errors?.['required']">
+                        Birthdate is required
+                    </div>
+                </div>
+            </div>
+
+            <!--User Gender control-->
+            <div class="mb-3">
+                <label class="form-label">Gender</label>
+                <input type="text" class="form-control" formControlName="gender" />
+                <div *ngIf="
+                    userForm.controls['gender'].dirty ||
+                    userForm.controls['gender'].touched
+                  ">
+                    <div class="alert alert-danger" *ngIf="userForm.controls['gender'].errors?.['required']">
+                        Gender is required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="userForm.controls['gender'].errors?.['pattern']">
+                        Gender is invalid.
+                    </div>
+                </div>
+            </div>
+
+            <!--User Email control-->
+            <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" formControlName="email" />
+                <div *ngIf="
+            userForm.controls['email'].dirty ||
+            userForm.controls['email'].touched
+          ">
+                    <div class="alert alert-danger" *ngIf="userForm.controls['email'].errors?.['required']">
+                        User email is required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="userForm.controls['email'].errors?.['email']">
+                        User email is invalid.
+                    </div>
+                </div>
+            </div>
+
+            <!--User Password control-->
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="psw" />
+                <div *ngIf="
+                    userForm.controls['psw'].dirty ||
+                    userForm.controls['psw'].touched
+                  ">
+                    <div class="alert alert-danger" *ngIf="userForm.controls['psw'].errors?.['required']">
+                        Password is required
+                    </div>
+                    <div class="alert alert-danger" *ngIf="userForm.controls['psw'].errors?.['pattern']">
+                        Password is invalid.
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="Add Employee" [disabled]="userForm.invalid" class="btn btn-primary" />
+
+
+        </form>
+    </div>

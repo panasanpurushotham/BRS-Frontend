@@ -1,0 +1,45 @@
+h2{
+    font-weight: 900;
+    font-size:x-large;
+    text-align: center;
+}
+
+nav{
+    background-color: rgb(40, 77, 40);
+    color: #000;
+    font-weight: 900;
+    font-size:large;
+}
+button{
+    background-color: red;
+}
+.userdelete{
+    padding-left: 1%;
+    padding-right: 1%;
+    border-radius: 1%;
+    
+}
+input[type=text] {
+    width: 10%;
+    height: 5%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing:border-box;
+    border-radius: 10px;
+  }
+  
+  /* Set a style for all buttons */
+  /* input[type=submit] {
+   
+    color: rgb(0, 0, 0);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 10%;
+    height: 5%;
+    border-radius: 10px;
+  } */
+  

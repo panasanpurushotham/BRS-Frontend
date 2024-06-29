@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+  .mystyle {
+      background-color:white;
+  }
+
+  .navbar-nav,
+  .navbar-brand {
+      font-weight: 900;
+  }
+</style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        
+        <div class="container px-5">
+            <a class="navbar-brand"  routerLink="/adminhome" routerLinkActive="active"><b>BigBoyToys</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                   
+                    <li class="nav-item"><a class="nav-link" routerLink="/userlist" routerLinkActive="active"><b>Userlist</b></a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/bookings" routerLinkActive="active"><b>Bookings</b></a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/allbikes" routerLinkActive="active"><b>All Bikes</b></a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/addbike" routerLinkActive="active"><b>Add New Bike</b></a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">...</a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+                          <li><a class="dropdown-item" routerLink="/adminprofile" routerLinkActive="active">Profile</a></li>
+                            <li><a class="dropdown-item" routerLink="" routerLinkActive="active">Log out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+ 
+    </nav>
+   
+
+    <div class="page">
+
+  <h2 style="text-align: center;"><b>Booking History</b></h2>
+  
+
+  <table border="2" class="w3-table-all w3-large">
+    <thead>
+    <tr>
+      <th>Id</th>
+      <th>User Id</th>
+      <th>Bike</th>
+      <th>Model</th>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Contact</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let b of bookings">
+        <td>{{b.id}}</td>
+        <td>{{b.userid}}</td>
+        <td>{{b.brand}}</td>
+        <td>{{b.model}}</td>
+        <td>{{b.fname}}</td>
+        <td>{{b.date}}</td>
+        <td>{{b.contact}}</td>
+        <td><button type="button" class="btn btn-danger" (click)="deleteData(b.id)">Delete</button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+  <!-- <div>
+    <br>
+    <h4><b>Delete Booking</b></h4>
+    <form #delete="ngForm" (ngSubmit)="deleteData(delete)">
+        <input type="text" style="border-radius: 5px; width: 8%" name="id" id="id" ngModel="id"><br>
+        <input style="background-color: red; border-radius: 5px;" type="submit" value="Delete">
+
+    </form>
+ </div> -->
+
+ <!-- <div>
+  <h4><b>Update Bike</b></h4>
+  <form #update="ngForm" (ngSubmit)="updateBike(update)">
+      <input type="text" name="id" id="id" ngModel="id"><br>
+      <input type="text" name="brand" id="brand" ngModel="brand"><br>
+      <input type="text" name="model" id="model" ngModel="model"><br>
+      <input style="background-color: green;" type="submit" value="update">
+
+  </form>
+</div> -->
+
+    </div>
+
+
+

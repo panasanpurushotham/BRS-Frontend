@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="container px-5">
+      <a class="navbar-brand" routerLink="/adminhome" routerLinkActive="active">BigBoyToys</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+          <li class="nav-item"><a class="nav-link" routerLink="/userlist" routerLinkActive="active">Userlist</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/bookings" routerLinkActive="active">Bookings</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/allbikes" routerLinkActive="active">All Bikes</a></li>
+          <li class="nav-item"><a class="nav-link" routerLink="/addbike" routerLinkActive="active">AddBike</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false">:</a>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio">
+              <li><a class="dropdown-item" routerLink="/adminprofile" routerLinkActive="active">Profile</a></li>
+              <li><a class="dropdown-item" routerLink="" routerLinkActive="active">Logout</a></li>
+              <!-- <li><a class="dropdown-item" routerLink="signup">Sign up</a></li> -->
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </nav>
+
+  <div class="w3-container">
+    <h2>User List</h2>
+
+    <table border="2" class="w3-table-all w3-large">
+      <thead>
+        <tr>
+          <th>UserId</th>
+          <th>Name</th>
+          <th>Contact</th>
+          <th>BirtDate</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of users">
+          <td>{{b.id}}</td>
+          <td>{{b.name}}</td>
+          <td>{{b.mob}}</td>
+          <td>{{b.birth}}</td>
+          <td>{{b.gender}}</td>
+          <td>{{b.email}}</td>
+          <!-- <td>{{b.psw}}</td> -->
+          <!-- <th><Button type="button" style="background-color: green;">Success</Button></th> -->
+          <!-- <td><button type="button" class="btn btn-primary"(click)="navigateToReceiver(b.id)"  routerLink="/terms" routerLinkActive="active" >  Update</button></td> -->
+         <td><button type="button" class="btn btn-danger" (click)="deleteUser(b.id)">Delete</button></td>
+
+          
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+  <br>
+
+
+
+   
+    <!-- <h4><b>Update User</b></h4>
+    <form #update="ngForm" (ngSubmit)="updateUser(update)">
+      <input type="text" name="id" id="id" ngModel="id">
+      <input type="text" name="name" id="name" ngModel="name">
+      <input type="text" name="mob" id="mob" ngModel="mob">
+      <input type="text" name="birth" id="birth" ngModel="birth">
+      <input type="text" name="gender" id="gender" ngModel="gender">
+      <input type="text" name="email" id="email" ngModel="email">
+      <input type="text" name="psw" id="psw" ngModel="psw"><br>
+      <input type="submit" style="background-color:darkgreen" value="update">
+
+    </form> -->
+    
+    <!-- <div class="delete">
+      <br>
+      <h4><b> Delete User</b></h4>
+      <form #delete="ngForm" (ngSubmit)="deleteUser(delete)">
+        <input type="text" name="id" id="id" ngModel="id"><br>
+        <input type="submit" style="background-color: red;" value="Delete">
+
+      </form>
+    </div>  -->
+
+  <!-- </div> -->
+
+</body>
+
+</html>

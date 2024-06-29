@@ -1,0 +1,118 @@
+<style>
+  .mystyle {
+    background-color: white;
+  }
+
+  .navbar-nav,
+  .navbar-brand {
+    font-weight: 900;
+  }
+</style>
+
+<body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container px-5">
+        <a class="navbar-brand" routerLink="" routerLinkActive="active">BigBoyToys</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+            class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+            <!-- <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" id="navbarDropdownPortfolio" href="#" role="button"
+                              data-bs-toggle="dropdown" aria-expanded="false">Get Started</a>
+                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownPortfolio"> -->
+            <!-- <li><a class="dropdown-item" routerLink="/signin" routerLinkActive="active">Sign in</a></li>
+                              <li><a class="dropdown-item" routerLink="/signup" routerLinkActive="active">Sign up</a></li> -->
+            <!-- <li><a class="dropdown-item" routerLink="/adminhome" routerLinkActive="active">Admin</a></li> -->
+            <!-- </ul>
+                      </li> -->
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </main>
+  <form #data="ngForm" [formGroup]="loginForm" (ngSubmit)="login(data)">
+    <div class="imgcontainer">
+      <img src="https://www.royalenfield.com/content/dam/royal-enfield/hunter-350/studio-shots/new/dapper-white.png
+      " alt="Avatar" class="avatar">
+      <br><b>BigBoyToys</b>
+    </div>
+
+    <div class="container">
+      <!-- <label for="id"><b>Username</b></label>
+      <input type="text" placeholder="Enter user id" name="id" formControlName="id" >
+      <span *ngIf="id && id.touched && id.invalid" style="color: red; ">Invalid username</span> -->
+
+
+
+      <!-- Username control -->
+      <div class="mb-3">
+        <label class="form-label">UserId</label>
+        <input type="number" class="form-control" formControlName="id" />
+        <div *ngIf="
+loginForm.controls['id'].dirty ||
+loginForm.controls['id'].touched
+">
+          <div class="alert alert-danger" *ngIf="loginForm.controls['id'].errors?.['required']">
+            UserId is required
+          </div>
+        </div>
+      </div>
+
+      <!--Email control-->
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" formControlName="email" />
+        <div *ngIf="
+loginForm.controls['email'].dirty ||
+loginForm.controls['email'].touched
+">
+          <div class="alert alert-danger" *ngIf="loginForm.controls['email'].errors?.['required']">
+            Email is required
+          </div>
+        </div>
+      </div>
+
+
+
+      <!-- <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" formControlName="psw">
+      <span *ngIf="psw && psw.invalid && psw.touched" style="color: red">Invalid password</span><br>
+   -->
+      <!--User Password control-->
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" formControlName="psw" />
+        <div *ngIf="
+        loginForm.controls['psw'].dirty ||
+        loginForm.controls['psw'].touched
+      ">
+          <div class="alert alert-danger" *ngIf="loginForm.controls['psw'].errors?.['required']">
+            Password is required
+          </div>
+        </div>
+      </div>
+
+      
+
+
+      <button type="submit" (click)="submit()" value="Login" [disabled]="loginForm.invalid"
+        class="btn btn-primary ">Sign In</button>
+
+      <!-- <button (click)="submit()" type="submit">Sign In</button> -->
+      <!-- <button routerLink="userhome" type="submit">Sign In</button> -->
+
+      <!-- <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div> -->
+
+      <!-- <div class="container" style="background-color:#f1f1f1"> -->
+      <!-- <button  type="button" class="cancelbtn">Cancel</button> -->
+      Forgot Password? <button (click)="submit1()" style="width: 80px; height: 40px;" type="submit">Reset</button>
+    </div>
+  </form>
